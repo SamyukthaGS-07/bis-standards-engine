@@ -10,7 +10,7 @@ Most RAG systems treat the BIS SP 21 PDF like a novel — random text chunks, fl
 
 This system treats SP 21 like what it actually is: a **structured standards ontology**.
 
-| Other teams | This system |
+| Other Systems | This System |
 |---|---|
 | Random PDF chunking | Structured record extraction per standard |
 | Flat vector search | Semantic + BM25 hybrid (RRF fusion) |
