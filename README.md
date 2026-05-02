@@ -170,6 +170,17 @@ python eval_script.py --input data/public_test.json --output data/public_results
 
 ---
 
+## Utility scripts
+
+Located in `scripts/` folder for debugging and development:
+
+| Script | Purpose |
+|---|---|
+| `scripts/inspect_pdf.py` | Debug/inspect PDF parsing output and structure |
+| `scripts/merge_results.py` | Merge or process multiple result JSON files |
+
+---
+
 ## Tech stack
 
 | Component | Tech |
@@ -189,34 +200,57 @@ python eval_script.py --input data/public_test.json --output data/public_results
 
 ```
 bis-standards-engine/
-├── inference.py          ← Judge entry point (DO NOT RENAME)
-├── setup.py              ← One-command setup
-├── eval_script.py        ← Organizer evaluation script (provided at Hour 0)
+├── inference.py            ← Judge entry point (DO NOT RENAME)
+├── setup.py                ← One-command setup
+├── eval_script.py          ← Organizer evaluation script
 ├── requirements.txt
 ├── .env.example
-├── src/
+├── .gitignore
+├── .gitattributes
+├── BIS_SP21.pdf            ← Input PDF (place here before running setup.py)
+│
+├── src/                    ← Core engine modules
 │   ├── parser/
+│   │   ├── __init__.py
 │   │   └── parse_sp21.py       ← PDF → structured JSON
 │   ├── graph/
+│   │   ├── __init__.py
 │   │   └── standards_graph.py  ← Knowledge graph builder
 │   ├── retriever/
+│   │   ├── __init__.py
 │   │   └── hybrid_retriever.py ← BM25 + semantic + graph fusion
 │   ├── llm/
+│   │   ├── __init__.py
 │   │   └── rationale_generator.py ← Explanation-only LLM
 │   └── api/
+│       ├── __init__.py
 │       └── app.py              ← FastAPI server
-├── data/
-│   ├── standards.json    ← Parsed standards (auto-generated)
-│   ├── graph.pkl         ← Knowledge graph (auto-generated)
-│   └── public_results.json ← Results on public test set
-└── frontend/
+│
+├── scripts/                ← Utility scripts
+│   ├── inspect_pdf.py      ← Debug/inspect PDF parsing
+│   └── merge_results.py    ← Merge/process result files
+│
+├── data/                   ← Generated data (auto-created by setup.py)
+│   ├── standards.json          ← Parsed standards
+│   ├── graph.pkl               ← Knowledge graph
+│   ├── chroma_db/              ← Vector database index
+│   ├── public_test_set.json    ← Public test queries
+│   ├── public_results.json     ← Results on public test set
+│   └── eval_input.json         ← Evaluation input data
+│
+└── frontend/               ← React + Vite UI
     ├── src/
     │   ├── pages/
     │   │   ├── SearchScreen.jsx
     │   │   └── ResultsScreen.jsx
     │   ├── App.jsx
+    │   ├── App.css
+    │   ├── index.css
     │   └── main.jsx
-    └── package.json
+    ├── vite.config.js
+    ├── index.html
+    ├── package.json
+    └── package-lock.json
 ```
 
 ---
