@@ -1,0 +1,45 @@
+:root {
+  --bg: #0a0a0a;
+  --bg-1: #111111;
+  --bg-2: #1a1a1a;
+  --bg-3: #222222;
+  --border: #2a2a2a;
+  --border-bright: #3a3a3a;
+  --accent: #e8ff47;        /* electric yellow — government stamp energy */
+  --accent-dim: rgba(232, 255, 71, 0.12);
+  --accent-glow: rgba(232, 255, 71, 0.25);
+  --text: #f0f0f0;
+  --text-2: #999999;
+  --text-3: #555555;
+  --green: #4ade80;
+  --orange: #fb923c;
+  --red: #f87171;
+  --blue: #60a5fa;
+
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, textarea { font-family: inherit; }
