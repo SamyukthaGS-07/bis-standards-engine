@@ -26,9 +26,9 @@ This system treats SP 21 like what it actually is: a **structured standards onto
 Product Description (input)
         │
         ▼
-┌─────────────────────┐
+┌──────────────────────┐
 │  Query Understanding │  ← Detects material category, application type
-└─────────┬───────────┘
+└─────────┬────────────┘
           │
     ┌─────┴──────┐
     │            │
@@ -222,6 +222,8 @@ bis-standards-engine/
 ---
 
 ## Team
+
+Samyuktha GS • Shri Nithee V • Abiranjana S
 
 Built for the BIS × SS Hackathon — May 2026.
 
